@@ -4,19 +4,18 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var content;
-    
-    fs.readFile('./index.html', function read(err, data) {
-	if (err) {
-            throw err;
-	}
-	content = data.toString('utf-8');
+ // var content;
+ //    fs.readFile('./index.html', function read(err, data) {
+//	if (err) {
+  //          throw err;
+//	}
+//	content = data.toString('utf-8');
+//	response.send(data);
+//    });
 
-	response.send(data);
-	
-    });
+    var buffer = fs.readFileSync("index.html");
 
- 
+    response.send(buffer.toString());
 });
 
 var port = process.env.PORT || 5000
