@@ -1,6 +1,6 @@
 var express = require('express');
 var fs = require('fs');
-var htmlfile = 'index_theme.html';
+var htmlfile = 'indec_theme.html';
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
